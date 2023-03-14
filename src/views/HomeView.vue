@@ -1,14 +1,25 @@
 <template>
   <div class="home">
-    <h1>This is the Home page.</h1>
+    <Hero />
   </div>
 </template>
 
 <script>
 
+import Hero from '../components/Hero'
+
 export default {
   name: 'HomeView',
   components: {
+    Hero
   }
 }
 </script>
+
+<style>
+  .home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
