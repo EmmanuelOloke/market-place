@@ -1,9 +1,10 @@
 <template>
     <div v-if="error">
         {{ error }}
+        <router-link to="/products">Back to Products</router-link>
     </div>
 
-    <div v-if="product">
+    <div v-else-if="product">
         <h3>{{ product.title }}</h3>
         <p>{{ product.description }}</p>
     </div>
@@ -21,9 +22,6 @@
             const {product, error, load} = getProduct(props.id)
 
             load()
-
-            console.log(product)
-            console.log(props.id)
 
             return { product, error }
         }
