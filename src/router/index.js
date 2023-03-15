@@ -1,4 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+
 import HomeView from '../views/HomeView.vue';
 import ProductsView from '../views/ProductsView.vue';
 import LoginView from '../views/LoginView.vue';
@@ -15,6 +17,9 @@ const routes = [
   {
     path: '/products',
     name: 'products',
+    meta: {
+      requiresAuth: true,
+    },
     component: ProductsView,
   },
   {
@@ -44,6 +49,32 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+});
+
+const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const removeListener = onAuthStateChanged(
+      getAuth(),
+      (user) => {
+        removeListener();
+        resolve(user);
+      },
+      reject
+    );
+  });
+};
+
+router.beforeEach(async (to, from, next) => {
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
+    if (await getCurrentUser()) {
+      next();
+    } else {
+      alert("You don't have access!");
+      next('/');
+    }
+  } else {
+    next();
+  }
 });
 
 export default router;
