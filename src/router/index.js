@@ -4,6 +4,7 @@ import ProductsView from '../views/ProductsView.vue';
 import LoginView from '../views/LoginView.vue';
 import SignupView from '../views/SignupView.vue';
 import ProductDetailsView from '../views/ProductDetailsView.vue';
+import NotFound from '../views/NotFound.vue';
 
 const routes = [
   {
@@ -31,6 +32,12 @@ const routes = [
     path: '/signup',
     name: 'signup',
     component: SignupView,
+  },
+  // CATCHALL 404
+  {
+    path: '/:catchAll(.*)',
+    name: 'NotFound',
+    component: NotFound,
   },
 ];
 
