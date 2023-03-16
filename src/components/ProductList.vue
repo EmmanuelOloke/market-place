@@ -1,5 +1,5 @@
 <template>
-    <div v-if="products">
+    <div v-if="products" class="product-list">
         <div v-for="product in products" :key="product.id">
             <SingleProduct :product="product"/>
         </div>
@@ -21,5 +21,10 @@
 </script>
 
 <style>
+
+    .product-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
 
 </style>
