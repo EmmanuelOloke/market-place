@@ -5,8 +5,8 @@
                 Buy quality products with confidence for the best price.
             </div>
             <div class="hero-buttons">
-                <button class="login">Login</button>
-                <button class="signup">Signup</button>    
+                <router-link to="/login"><button class="login">Login</button></router-link>
+                <router-link to="/signup"><button class="signup">Signup</button></router-link>
             </div>
         </div>
 
@@ -58,8 +58,8 @@
     background: white;
     padding: 10px 40px;
     border: none;
-    outline: 2px solid #42b983;
     color: #42b983;
+    outline: 2px solid #42b983;
     border-radius: 5px;
     font-size: 20px;
     transition: 1s;
