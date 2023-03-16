@@ -83,7 +83,7 @@
 
     .google-signup:hover {
       cursor: pointer;
-      background: #e3f3fa;
+      background: #e1f7ef;
     }
 
     .logo {
