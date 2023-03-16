@@ -6,10 +6,10 @@
 
         <div class="nav-links">
             <router-link to="/">Home</router-link>
-            <router-link to="/products">Products</router-link>
-            <router-link to="/login">Log In</router-link>
-            <router-link to="/signup">Sign Up</router-link>
-            <button @click="handleSignOut" v-if="isLoggedIn">Sign out</button>
+            <router-link v-if="isLoggedIn" to="/products">Products</router-link>
+            <router-link v-if="!isLoggedIn" to="/login">Log In</router-link>
+            <router-link v-if="!isLoggedIn" to="/signup">Sign Up</router-link>
+            <button class="sign-out" @click="handleSignOut" v-if="isLoggedIn">Sign out</button>
         </div>
     </nav>
 </template>
@@ -67,5 +67,18 @@
     .nav-links {
         display: flex;
         gap: 1.5em;
+    }
+
+    .sign-out {
+        border: 1px solid #54d098;
+        padding: 0.5em 1em;
+        border-radius: 5px;
+        background: none;
+        color: #8e9a9f;
+        font-weight: bold;
+    }
+
+    .sign-out:hover {
+        cursor: pointer;
     }
 </style>
