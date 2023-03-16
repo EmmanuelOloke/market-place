@@ -5,7 +5,7 @@
             <p class="title">{{ product.title }}</p>
             <p class="rating">{{ product.rating }} / 5.00</p>
             <div class="price">
-                <p class="amount">${{ product.price }}</p>
+                <p class="amount">${{ product.price.toLocaleString() }}</p>
                 <p class="discount">{{ product.discountPercentage }}% OFF</p>
             </div>
             <router-link :to="{name: 'productDetails', params: {id: product.id}}">
