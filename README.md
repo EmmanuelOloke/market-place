@@ -2,7 +2,7 @@
 
 ## Live Link
 
-Market Place [Market Place](https://market-place-black.vercel.app/)
+[Market Place](https://market-place-black.vercel.app/)
 
 ## Project setup
 
