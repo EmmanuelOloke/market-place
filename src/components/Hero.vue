@@ -5,8 +5,8 @@
                 Buy quality products with confidence for the best price.
             </div>
             <div class="hero-buttons">
-                <router-link to="/login"><button class="login">Login</button></router-link>
-                <router-link to="/signup"><button class="signup">Signup</button></router-link>
+                <button @click="handleLogin" class="login">Login</button>
+                <button @click="handleSignup" class="signup">Signup</button>
             </div>
         </div>
 
@@ -16,10 +16,33 @@
     </div>
 </template>
 
-<script>
-    export default {
+<script setup>
+    import { useRouter } from 'vue-router'
+    import { getAuth, onAuthStateChanged } from 'firebase/auth'
 
+    const router = useRouter()
+    let auth = getAuth()
+
+    const handleLogin = () => {
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          router.push('/')
+        } else {
+          router.push('/login')
+        }
+      })
     }
+
+    const handleSignup = () => {
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          router.push('/')
+        } else {
+          router.push('/signup')
+        }
+      })
+    }
+
 </script>
 
 <style>
