@@ -45,8 +45,8 @@
 
     .title {
         text-align: left;
-        font-size: 1.2em;
         font-weight: bold;
+        font-size: 1.3em !important
     }
 
     .rating {
