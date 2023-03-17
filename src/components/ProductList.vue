@@ -5,17 +5,19 @@
         </div>
     </div>
     <div v-else>
-        Loading...
+        <Loader />
     </div>
 </template>
 
 <script>
     import SingleProduct from './SingleProduct.vue'
+    import Loader from './Loader.vue'
 
     export default {
         props: ['products'],
         components: {
-            SingleProduct
+            SingleProduct,
+            Loader
         }
     }
 </script>
