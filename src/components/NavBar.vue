@@ -9,6 +9,7 @@
             <router-link v-if="isLoggedIn" to="/products">Products</router-link>
             <router-link v-if="!isLoggedIn" to="/login">Log In</router-link>
             <router-link v-if="!isLoggedIn" to="/signup">Sign Up</router-link>
+            <p class="display-name" v-if="displayName">{{ displayName }}</p>
             <button class="sign-out" @click="handleSignOut" v-if="isLoggedIn">Sign out</button>
         </div>
     </nav>
@@ -21,13 +22,15 @@
 
     const router = useRouter()
     const isLoggedIn = ref(false)
-    let auth;
+    const displayName = ref('')
+    let auth
 
     onMounted(() => {
         auth = getAuth()
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 isLoggedIn.value = true
+                displayName.value = user.displayName
             } else {
                 isLoggedIn.value = false
             }
@@ -36,6 +39,7 @@
 
     const handleSignOut = () => {
         signOut(auth).then(() => {
+            displayName.value = ''
             router.push('/')
         })
     }
@@ -67,6 +71,11 @@
     .nav-links {
         display: flex;
         gap: 1.5em;
+    }
+
+    .display-name {
+        font-size: 0.8em;
+        font-weight: bold;
     }
 
     .sign-out {
