@@ -4,7 +4,7 @@
             <img class="prod-img" :src="product.thumbnail" alt="product thumbnail">
             <p class="title">{{ product.title }}</p>
             <p class="rating">{{ product.rating }} / 5.00</p>
-            <div class="price">
+            <div class="single-price">
                 <p class="amount">${{ product.price.toLocaleString() }}</p>
                 <p class="discount">{{ product.discountPercentage }}% OFF</p>
             </div>
@@ -60,7 +60,7 @@
         color: #4e6a76;
     }
 
-    .price {
+    .single-price {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -68,6 +68,7 @@
 
     .amount {
         font-weight: bold;
+        font-size: 1.5em;
     }
 
     .discount {
