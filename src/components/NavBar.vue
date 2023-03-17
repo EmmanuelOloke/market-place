@@ -63,10 +63,19 @@
         border-radius: 4px;
     }
 
+    nav a:hover {
+        color: #42b983;
+    }
+
     nav a.router-link-exact-active {
         color: white;
         background: #42b983;
     }
+
+    nav a.router-link-exact-active:hover {
+        color: white;
+    }
+
 
     .nav-links {
         display: flex;
