@@ -4,9 +4,17 @@
             <div class="hero-text">
                 Buy quality products with confidence for the best price.
             </div>
-            <div class="hero-buttons">
+            <div>
+              <div v-if="isLoggedIn">
+                <router-link to="/products">
+                  <button class="signup" @click="goToProducts">View Products</button>
+                </router-link>
+              </div>
+
+              <div v-else class="hero-buttons">
                 <button @click="handleLogin" class="login">Login</button>
                 <button @click="handleSignup" class="signup">Signup</button>
+              </div>
             </div>
         </div>
 
@@ -17,11 +25,23 @@
 </template>
 
 <script setup>
+    import { ref } from 'vue'
     import { useRouter } from 'vue-router'
     import { getAuth, onAuthStateChanged } from 'firebase/auth'
 
     const router = useRouter()
+    const isLoggedIn = ref(false)
     let auth = getAuth()
+
+    const goToProducts = () => {
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          isLoggedIn.value = true
+        }
+      })
+    }
+
+    goToProducts()
 
     const handleLogin = () => {
       onAuthStateChanged(auth, (user) => {
