@@ -45,19 +45,23 @@
         </div>
     
         <div v-else>
-            Loading...
+            <Loader />
         </div>
     </div>
 </template>
 
 <script>
     import getProduct from '@/composables/getProduct'
+    import Loader from '@/components/Loader.vue'
     import { ref } from 'vue'
 
     let mainImage = ref('')
     
     export default {
         props: ['id'],
+        components: {
+            Loader
+        },
         setup(props) {
             const {product, error, load} = getProduct(props.id)
             
@@ -134,6 +138,8 @@
     .description {
         color: black;
         font-size: 1em;
+        width: 35em;
+        text-align: left;
     }
 
     .disc-price {
