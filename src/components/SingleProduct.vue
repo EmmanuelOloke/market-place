@@ -96,4 +96,36 @@
         cursor: pointer;
         background: #54d098;
     }
+
+    @media only screen and (max-width: 768px) {
+        .product-card {
+            width: 16em;
+        }
+
+        .prod-img {
+            width: 15em;
+            height: 9em;
+        }
+
+        .title {
+            font-size: 1em !important;
+        }
+
+        .rating {
+            font-size: 0.7em;
+        }
+
+        .amount {
+            font-size: 1em;
+        }
+
+        .discount {
+            font-size: 0.7em;
+        }
+
+        .view-details {
+            width: 14em;
+            font-size: 0.8em;
+        }
+    }
 </style>

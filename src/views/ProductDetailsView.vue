@@ -24,7 +24,7 @@
     
                     <div class="disc-price">
                         <p class="price">${{ product.price }}</p>
-                        <p class="disc">{{ product.discountPercentage }}%</p>
+                        <p class="discount">{{ product.discountPercentage }}%</p>
                     </div>
     
                     <div class="rate">
@@ -66,8 +66,6 @@
             const {product, error, load} = getProduct(props.id)
             
             load()
-
-            console.log(mainImage)
 
             const changeMainImage = (image) => {
                 mainImage.value = image
@@ -154,7 +152,7 @@
         margin: 0;
     }
 
-    .disc {
+    .discount {
         font-size: large;
         font-weight: bold;
         background: #dbffee;
@@ -207,5 +205,54 @@
     .back-products:hover {
         cursor: pointer;
         background: #54d098;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .product-details {
+            flex-direction: column;
+            gap: 1em;
+        }
+
+        .image-container {
+            align-items: center;
+        }
+
+        .main-image {
+            width: 15em;
+            height: 10em;
+        }
+
+        .other-images {
+            gap: 0em;
+        }
+
+        .image {
+            width: 43px;
+            height: 43px;
+        }
+
+        .details-text-container {
+            gap: 0em;
+            width: 5em;
+            flex-wrap: wrap;
+        }
+
+        .title {
+            font-size: 1em;
+        }
+
+        .description {
+            width: 15em;
+        }
+
+        .price, .discount, .rate-label, .rate-figure, .text {
+            font-size: 1em;
+        }
+
+        .back-products {
+            width: 14em;
+            font-size: 0.7em;
+            padding: 1em 2em;
+        }
     }
 </style>

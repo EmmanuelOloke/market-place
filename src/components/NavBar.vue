@@ -49,7 +49,7 @@
     nav {
         padding: 10px 0;
         display: flex;
-        justify-content: space-between;
+        gap: 39em;
         align-items: center;
         width: 83%;
         margin: 0 auto;
@@ -98,16 +98,27 @@
 
     .sign-out:hover {
         cursor: pointer;
+        color: #54d098;
     }
 
     @media only screen and (max-width: 768px) {
         nav {
-            width: 95%;
+            width: 100%;
             padding: 0;
+            gap: 5em;
         }
 
         nav a {
-            font-size: 12px;
+            font-size: 0.5em;
+        }
+
+        .display-name {
+            font-size: 0.5em;
+        }
+
+        .sign-out {
+            padding: 0em 0.5em;
+            font-size: 0.5em;
         }
 
         .nav-links {
@@ -115,7 +126,7 @@
         }
 
         h2 {
-            font-size: 1em;
+            font-size: 0.7em;
         }
     }
 </style>
