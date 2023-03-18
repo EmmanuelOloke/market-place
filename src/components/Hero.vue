@@ -134,4 +134,23 @@
   img {
     width: 35rem;
   }
+
+  @media only screen and (max-width: 400px) {
+    .hero {
+      flex-direction: column-reverse;
+    }
+
+    .hero-text {
+      font-size: 1.2rem;
+      line-height: 30px;
+    }
+
+    .hero-buttons {
+      flex-direction: column;
+    }
+
+    img {
+      width: 15rem;
+    }
+  }
 </style>
