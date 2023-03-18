@@ -1,7 +1,7 @@
 <template>
     <nav>
         <div>
-            <h2>Market Place</h2>
+            <h2 style="color: #42b983">Market Place</h2>
         </div>
 
         <div class="nav-links">
@@ -45,7 +45,7 @@
     }
 </script>
 
-<style>
+<style scoped>
     nav {
         padding: 10px 0;
         display: flex;
@@ -98,5 +98,24 @@
 
     .sign-out:hover {
         cursor: pointer;
+    }
+
+    @media only screen and (max-width: 400px) {
+        nav {
+            width: 100%;
+            padding: 0;
+        }
+
+        nav a {
+            font-size: 12px;
+        }
+
+        .nav-links {
+            gap: 0em;
+        }
+
+        h2 {
+            font-size: 1em;
+        }
     }
 </style>
