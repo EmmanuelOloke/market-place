@@ -100,9 +100,9 @@
         cursor: pointer;
     }
 
-    @media only screen and (max-width: 400px) {
+    @media only screen and (max-width: 768px) {
         nav {
-            width: 100%;
+            width: 95%;
             padding: 0;
         }
 
