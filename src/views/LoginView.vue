@@ -1,6 +1,6 @@
 <template>
   <div class="login-container">
-    <p>Log in to your account</p>
+    <p class="login-title">Log in to your account</p>
     <div>
       <input type="text" placeholder="Email" v-model="email">
     </div>
@@ -116,5 +116,24 @@
   .login-button:hover {
     cursor: pointer;
     background: #54d098;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .login-container {
+      width: 200px;
+      margin: 50px auto;
+    }
+
+    .login-title {
+      font-size: 1.2em;
+    }
+
+    input {
+      width: 14em;
+    }
+
+    .login-button {
+      width: 14em;
+    }
   }
 </style>

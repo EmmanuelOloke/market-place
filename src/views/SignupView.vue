@@ -1,6 +1,6 @@
 <template>
     <div class="signup-container">
-      <p>Sign up for Market Place</p>
+      <p class="signup-title">Sign up for Market Place</p>
       <div>
         <input type="text" placeholder="Email" v-model="email">
       </div>
@@ -89,6 +89,28 @@
     .logo {
       width: 40px;
       height: 40px;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .signup-container {
+        width: 200px;
+        margin: 50px auto;
+      }
+
+      .signup-title {
+        font-size: 1.1em;
+      }
+
+      input {
+        width: 14em;
+      }
+
+      .login-button {
+        width: 14em;
+      }
+      .google-signup {
+        width: 14em;
+      }
     }
   </style>
   
