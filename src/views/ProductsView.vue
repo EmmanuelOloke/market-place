@@ -30,9 +30,13 @@
 </script>
 
 <style>
+  h1 {
+    color: #42b983;
+  }
   @media only screen and (max-width: 768px) {
     h1 {
       font-size: 0.8em;
+      color: #42b983;
     }
   }
 
