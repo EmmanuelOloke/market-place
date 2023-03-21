@@ -23,7 +23,7 @@
                     <p class="description">{{ product.description }}</p>
     
                     <div class="disc-price">
-                        <p class="price">${{ product.price }}</p>
+                        <p class="price">${{ product.price.toLocaleString() }}</p>
                         <p class="discount">{{ product.discountPercentage }}%</p>
                     </div>
     
