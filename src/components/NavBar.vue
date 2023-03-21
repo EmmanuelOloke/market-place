@@ -1,7 +1,7 @@
 <template>
     <nav>
-        <div>
-            <h2 style="color: #42b983">Market Place</h2>
+        <div class="title-link">
+            <router-link to="/"><h2 style="color: #42b983">Market Place</h2></router-link>
         </div>
 
         <div class="nav-links">
@@ -74,6 +74,10 @@
 
     nav a.router-link-exact-active:hover {
         color: white;
+    }
+
+    .title-link > a.router-link-exact-active {
+        background: none;
     }
 
 
