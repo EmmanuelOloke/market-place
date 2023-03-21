@@ -67,6 +67,8 @@
             
             load()
 
+            mainImage.value = product.thumbnail
+
             const changeMainImage = (image) => {
                 mainImage.value = image
             }
